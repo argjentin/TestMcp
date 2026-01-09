@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   OBSIDIAN SYNDICATE - Cryptographic Shadow Design System
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─────────────────────────────────────────────────────────────────────────────
+     COLOR PALETTE - Deep Cryptographic Darkness
+     ───────────────────────────────────────────────────────────────────────────── */
+
+  /* Primary Background Layers */
+  --bg-void: #000000;
+  --bg-abyss: #050508;
+  --bg-deep: #0a0a0f;
+  --bg-surface: #0f0f14;
+  --bg-elevated: #14141a;
+  --bg-card: #1a1a22;
+
+  /* Accent Colors - Encrypted Signal */
+  --accent-primary: #00ff88;
+  --accent-primary-dim: #00cc6a;
+  --accent-primary-glow: rgba(0, 255, 136, 0.15);
+  --accent-secondary: #0affef;
+  --accent-warning: #ff6b35;
+  --accent-danger: #ff3355;
+  --accent-muted: #3d3d4a;
+
+  /* Text Hierarchy */
+  --text-primary: #e8e8ed;
+  --text-secondary: #9898a8;
+  --text-muted: #5c5c6e;
+  --text-ghost: #3a3a48;
+  --text-accent: var(--accent-primary);
+
+  /* Border System */
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --border-default: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --border-accent: rgba(0, 255, 136, 0.3);
+
+  /* ─────────────────────────────────────────────────────────────────────────────
+     TYPOGRAPHY - Monospace Terminal Feel
+     ───────────────────────────────────────────────────────────────────────────── */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Consolas', monospace;
+  --font-sans: 'Inter', 'SF Pro Display', -apple-system, system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.5rem;
+
+  /* ─────────────────────────────────────────────────────────────────────────────
+     SPACING - Precise Grid
+     ───────────────────────────────────────────────────────────────────────────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ─────────────────────────────────────────────────────────────────────────────
+     EFFECTS - Cryptographic Glow
+     ───────────────────────────────────────────────────────────────────────────── */
+  --glow-sm: 0 0 10px var(--accent-primary-glow);
+  --glow-md: 0 0 20px var(--accent-primary-glow), 0 0 40px rgba(0, 255, 136, 0.08);
+  --glow-lg: 0 0 30px var(--accent-primary-glow), 0 0 60px rgba(0, 255, 136, 0.1), 0 0 100px rgba(0, 255, 136, 0.05);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.8);
+
+  /* ─────────────────────────────────────────────────────────────────────────────
+     TRANSITIONS
+     ───────────────────────────────────────────────────────────────────────────── */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* ─────────────────────────────────────────────────────────────────────────────
+     BORDERS & RADIUS
+     ───────────────────────────────────────────────────────────────────────────── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   BASE STYLES
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-void);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   SCROLLBAR - Terminal Style
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   SELECTION
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+::selection {
+  background: var(--accent-primary);
+  color: var(--bg-void);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-accent {
+  color: var(--accent-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.glow-text {
+  text-shadow: var(--glow-sm);
+}
+
+.glow-box {
+  box-shadow: var(--glow-md);
+}
+
+/* Scanline overlay effect */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image:
+    linear-gradient(var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Noise texture overlay */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Terminal cursor blink */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Pulse glow animation */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: var(--glow-sm); }
+  50% { box-shadow: var(--glow-md); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Data stream animation */
+@keyframes data-stream {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.animate-data-stream {
+  animation: data-stream 20s linear infinite;
+}
